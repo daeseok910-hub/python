@@ -1,5 +1,18 @@
-a = '1234555'
+def solution(ingredient):
+    str_ingredient = ''.join(map(str,ingredient))
 
-f = a.replace('555','')
+    count = 0
 
-print(f)
+    while True :
+        count += str_ingredient.count('1231')
+        tmp = str_ingredient.replace('1231','')
+        str_ingredient = ''
+        str_ingredient += tmp
+
+        if str_ingredient.count('1231') == 0 :
+            break
+
+    return count
+
+print(solution([1, 3, 2, 1, 2, 1, 3, 1, 2]))
+
